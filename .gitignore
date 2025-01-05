@@ -1,0 +1,32 @@
+# Node.js module directories
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# other files you want to ignore
+*.sublime-workspace
+*.sublime-project
+.idea/  # JetBrains IDE project files
+.vscode/ # VSCode project files
