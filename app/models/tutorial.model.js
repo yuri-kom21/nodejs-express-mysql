@@ -1,4 +1,4 @@
-const db = require('./db');
+const sql = require('./db');
 
 // constructor
 const Tutorial = function (tutorial) {
@@ -22,7 +22,7 @@ Tutorial.create = (newTutorial, result) => {
 };
 
 Tutorial.findById = (id, result) => {
-    sql.query("SELECT * FROM tutorials WHERE id = ${id}", (err, res) => {
+    sql.query(`SELECT * FROM tutorials WHERE id = ${id}`, (err, res) => {
         if (err) {
             console.log("error:", err);
             result(err, null);
@@ -76,7 +76,8 @@ Tutorial.getAllPublished = result => {
 };
 
 Tutorial.updateById = (id, tutorial, result) => {
-    sql.query("UPDATE tutorials SET title = ?, description = ?, published = ? WHERE id = ?", [tutorial.title, tutorial.description, tutorial.published], (err, res) => {
+    sql.query("UPDATE tutorials SET title = ?, description = ?, published = ? WHERE id = ?", 
+        [tutorial.title, tutorial.description, tutorial.published, id], (err, res) => {
         if (err) {
             console.log("error:", err);
             result(null, err);

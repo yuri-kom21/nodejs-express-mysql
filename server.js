@@ -13,10 +13,6 @@ app.use(express.json());
 //parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-
 require("./app/routes/tutorial.routes.js")(app);
 
 //set port, listen for requests
